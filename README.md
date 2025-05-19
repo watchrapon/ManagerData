@@ -61,36 +61,6 @@
 | `created_at` | Date     | วันที่สร้างข้อมูลผู้ใช้งาน                   |
 | `updated_at` | Date     | วันที่อัพเดทข้อมูลผู้ใช้งานล่าสุด             |
 
-## 📂 โครงสร้างไฟล์
-
-├── frontend/
-│   ├── src/
-│   │   ├── main.jsx          # จุดเริ่มต้นของ React application
-│   │   ├── App.jsx           # Component หลักของ application
-│   │   ├── components/       # โฟลเดอร์เก็บ components ต่างๆ
-│   │   │   ├── UserList.jsx    # Component แสดงรายการผู้ใช้งานทั้งหมด
-│   │   │   ├── UserDetail.jsx  # Component แสดงรายละเอียดผู้ใช้งาน
-│   │   │   ├── UserForm.jsx    # Component สำหรับเพิ่มหรือแก้ไขข้อมูลผู้ใช้งาน
-│   │   │   └── ActionModal.jsx # Component Modal สำหรับการจัดการผู้ใช้งาน
-│   │   └── styles/         # โฟลเดอร์เก็บไฟล์ CSS
-│   │       ├── UserList.css    # Styles สำหรับหน้ารายการผู้ใช้งาน
-│   │       └── Modal.css       # Styles สำหรับ Modal components ต่างๆ
-│   ├── vite.config.js      # การตั้งค่า Vite และ Proxy API
-│   └── ...
-├── backend/
-│   ├── server.js           # จุดเริ่มต้นของ server application
-│   ├── config/
-│   │   └── db.js           # การเชื่อมต่อฐานข้อมูล MongoDB
-│   ├── routes/
-│   │   └── userRoutes.js     # กำหนด API routes สำหรับจัดการผู้ใช้งาน
-│   ├── controllers/
-│   │   └── userController.js # Logic สำหรับจัดการข้อมูลผู้ใช้งาน
-│   ├── models/
-│   │   └── userModel.js      # Schema สำหรับข้อมูลผู้ใช้งาน
-│   └── ...
-├── .env                    # Environment variables เช่น ข้อมูลเชื่อมต่อ MongoDB
-├── eslint.config.js        # การตั้งค่า ESLint
-└── package.json            # รายการ dependencies และ scripts
 
 
 ## ✨ ความสามารถหลัก
@@ -103,13 +73,5 @@
 * **แก้ไขข้อมูลผู้ใช้งาน:** ปรับปรุงข้อมูลของผู้ใช้งานที่มีอยู่ให้ทันสมัย
 * **ลบผู้ใช้งาน:** นำผู้ใช้งานที่ไม่ต้องการออกจากระบบ
 
-## ⚙️ การตั้งค่าฐานข้อมูล
 
-การตั้งค่าการเชื่อมต่อฐานข้อมูล MongoDB ถูกกำหนดไว้ในไฟล์ `.env` ซึ่งคุณต้องสร้างขึ้นและกำหนดค่าตัวแปรดังนี้:
-
-MONGO_USERNAME=your_mongodb_username
-MONGO_PASSWORD=your_mongodb_password
-MONGO_CLUSTER=your_mongodb_cluster_url
-MONGO_DATABASE=sample_mflix
-PORT=5000
 
