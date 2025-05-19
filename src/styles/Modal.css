@@ -1,0 +1,580 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  font-family: 'Sarabun', 'Noto Sans Thai', sans-serif;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 600px; /* เพิ่มความกว้างให้รองรับ label ด้านซ้าย */
+  max-width: 95%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  color: #333;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #eaeaea;
+  background-color: #f8f9fa;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  padding: 1.2rem 1.5rem;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background-color: #f8f9fa;
+  border-radius: 0 0 10px 10px;
+}
+
+.modal-footer button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.modal-footer button:hover {
+  background-color: #dee2e6;
+}
+
+.modal-footer button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-footer button[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  background-color: #fff;
+  color: #000; /* กำหนดสีข้อความเป็นดำสำหรับทุกช่องกรอกข้อมูล */
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  color: #000; /* คงสีดำแม้ในขณะ focus */
+}
+
+.error {
+  color: #dc3545;
+  margin: 0.5rem 0 1rem;
+  padding: 0.5rem;
+  background-color: #f8d7da;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.user-details p {
+  margin: 0.8rem 0;
+  line-height: 1.5;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.user-details p:last-child {
+  border-bottom: none;
+}
+
+.user-details strong {
+  font-weight: 600;
+  color: #495057;
+  margin-right: 0.5rem;
+}
+
+/* Action Modal Styles */
+.action-modal {
+  width: 400px;
+}
+
+.user-info {
+  margin: 0.5rem 0;
+  color: #495057;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 1.5rem 0;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.action-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.view-btn {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+.view-btn:hover {
+  background-color: #bbdefb;
+}
+
+.edit-btn {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.edit-btn:hover {
+  background-color: #c8e6c9;
+}
+
+.delete-btn {
+  background-color: #ffebee;
+  color: #c62828;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.delete-btn:hover {
+  background-color: #ffcdd2;
+}
+
+/* User Action Modal Styles */
+.user-action-modal {
+  width: 550px;
+  max-width: 95%;
+}
+
+.user-data-container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #eaeaea;
+}
+
+.user-details h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 8px;
+}
+
+.user-detail-item {
+  display: flex;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.detail-label {
+  min-width: 120px;
+  font-weight: 500;
+  color: #555;
+}
+
+.detail-value {
+  flex: 1;
+  color: #333;
+}
+
+.detail-value.address {
+  white-space: pre-line;
+}
+
+.loading-indicator {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.modal-footer.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.modal-footer.action-buttons .close-action-btn {
+  grid-column: span 2;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Form Styles - Horizontal Layout */
+.form-horizontal .form-group {
+  display: flex;
+  margin-bottom: 1.2rem;
+  align-items: flex-start;
+}
+
+.form-horizontal .form-label {
+  min-width: 130px;
+  text-align: right;
+  padding-right: 15px;
+  padding-top: 10px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.form-horizontal .form-input-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-horizontal input,
+.form-horizontal textarea,
+.form-horizontal select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #fff;
+  color: #000; /* กำหนดสีข้อความเป็นดำสำหรับทุกช่องกรอกข้อมูล */
+}
+
+.form-horizontal input:focus,
+.form-horizontal textarea:focus,
+.form-horizontal select:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  color: #000; /* คงสีดำแม้ในขณะ focus */
+}
+
+.form-horizontal input::placeholder,
+.form-horizontal textarea::placeholder {
+  color: #adb5bd;
+  opacity: 0.8;
+}
+
+.form-horizontal .form-hint {
+  margin-top: 5px;
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.save-btn:hover {
+  background-color: #218838;
+}
+
+.cancel-btn {
+  background-color: #6c757d;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Form Layout Styles */
+.form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-layout .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-layout label {
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.form-layout input,
+.form-layout textarea,
+.form-layout select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: #fff;
+  color: #000; /* กำหนดสีข้อความเป็นดำสำหรับทุกช่องกรอกข้อมูล */
+}
+
+.form-layout input:focus,
+.form-layout textarea:focus,
+.form-layout select:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  outline: none;
+  color: #000; /* คงสีดำแม้ในขณะ focus */
+}
+
+/* Placeholder styling for text inputs */
+.form-layout input::placeholder,
+.form-layout textarea::placeholder {
+  color: #999;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Style for inputs with existing data placeholder */
+.has-placeholder::placeholder {
+  color: #666;
+  opacity: 0.8;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Style for select with existing data */
+.has-data {
+  color: #666;
+}
+
+/* Empty select placeholder color */
+select:invalid,
+select option[value=""] {
+  color: #999;
+}
+
+.password-hint {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.save-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.save-btn:hover {
+  background-color: #45a049;
+}
+
+.save-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  background-color: #f1f1f1;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+  background-color: #e7e7e7;
+  border-color: #ccc;
+}
+
+.cancel-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Modal Content Adjustments */
+.modal-content {
+  width: 500px;
+  max-width: 95%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: #f9f9f9;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.error {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .modal-content {
+    width: 95%;
+  }
+  
+  .form-layout input,
+  .form-layout textarea,
+  .form-layout select {
+    font-size: 16px; /* Prevents zoom on mobile */
+  }
+}
+
+/* Style for muted text in ActionModal */
+.muted-text {
+  color: #777;
+  font-style: italic;
+}
+
+/* Sex select styling */
+.sex-select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: #fff;
+  appearance: menulist;
+  cursor: pointer;
+  color: #000; /* สีข้อความปกติเมื่อมีการเลือก */
+}
+
+/* สีเทาจางเมื่อยังไม่ได้เลือก */
+.empty-select {
+  color: #999;
+}
+
+.sex-select:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  outline: none;
+  color: #000; /* เมื่อ focus ให้สีข้อความเป็นดำ */
+}
+
+/* สีเทาจางสำหรับตัวเลือกแรก (placeholder) */
+.placeholder-option {
+  color: #999;
+}
+
+.sex-select option:not(.placeholder-option) {
+  color: #000; /* ตัวเลือกอื่นๆ เป็นสีดำ */
+}
+
+/* Additional style for selected value */
+.selected-value {
+  color: #000 !important; /* ใช้ !important เพื่อให้แน่ใจว่าจะทับสไตล์อื่นๆ */
+  font-weight: 500; /* ทำให้ข้อความหนาขึ้นเล็กน้อยเพื่อให้ชัดเจนยิ่งขึ้น */
+}

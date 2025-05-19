@@ -1,0 +1,181 @@
+.user-list-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Sarabun', 'Noto Sans Thai', sans-serif;
+  clear: both; /* เพื่อให้การจัดวาง float ไม่มีผลกระทบต่อองค์ประกอบอื่น */
+}
+
+.user-list-container h2 {
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: #333;
+  text-align: left;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.add-user-btn {
+  margin-bottom: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-block;
+  float: left; /* จัดให้อยู่ด้านซ้าย */
+}
+
+.add-user-btn:hover {
+  background-color: #45a049;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  color: #000000; /* กำหนดสีข้อความในตารางเป็นดำ */
+}
+
+.user-table th,
+.user-table td {
+  border: none;
+  padding: 15px;
+  text-align: left;
+  color: #000000; /* กำหนดสีข้อความในเซลล์ตารางเป็นดำ */
+}
+
+.user-table th {
+  background-color: #f8f9fa;
+  color: #000000; /* Change from #495057 to black */
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.user-table tr {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.user-table tr:last-child {
+  border-bottom: none;
+}
+
+.user-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.user-table a {
+  color: #000000; /* Change from #1a73e8 to black */
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+.user-table a:hover {
+  color: #1557b0; /* Keep hover color for better UX */
+  text-decoration: underline;
+}
+
+.action-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #6c757d;
+  transition: transform 0.2s, color 0.2s;
+  padding: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.action-icon:hover {
+  color: #343a40;
+  transform: scale(1.1);
+  background-color: #f8f9fa;
+}
+
+.file-icon {
+  font-style: normal;
+  display: inline-block;
+}
+
+.error-message {
+  background-color: #fff3f3;
+  border: 1px solid #ffcdd2;
+  color: #d32f2f;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.error-message button {
+  margin-top: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.error-message button:hover {
+  background-color: #e53935;
+}
+
+.loading {
+  text-align: center;
+  padding: 30px;
+  font-size: 1.2rem;
+  color: #6c757d;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+  .user-table th,
+  .user-table td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+
+  .user-list-container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* เพิ่ม clearfix เพื่อป้องกันปัญหา float */
+.button-container {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
