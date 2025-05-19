@@ -43,6 +43,7 @@
 ## 💾 ฐานข้อมูล
 
 โปรเจกต์นี้ใช้ **MongoDB Atlas** เป็นบริการฐานข้อมูลบนคลาวด์ โดยมีรายละเอียดดังนี้:
+dowload database (https://drive.google.com/file/d/13BehQLRYHxV8d_C9ECX5b_a_6ieCP3g-/view?usp=sharing)
 
 * **Database Name:** `sample_mflix`
 * **Collection:** `users`
